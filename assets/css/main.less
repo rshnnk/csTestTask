@@ -1,0 +1,275 @@
+@import "reset";
+@import "normalize";
+@import "colors";
+
+
+
+
+
+
+.pull-right{
+  float: right;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.icon-white {
+  -webkit-filter: grayscale(100%) brightness(5);
+  filter: grayscale(100%) brightness(5);
+}
+
+header{
+  background: @header__bg;
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+
+  & > div, button {
+    margin-left: 15px;
+  }
+
+  .header-logo{
+    background-image: url('../../www/img/Google_for_Work_logo_2015.PNG');
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex: 1;
+    height: 100%;
+  }
+
+  .phone-icon-sm{
+    display: none;
+    height: 32px;
+    .white-icon{
+      fill: #fff;
+    }
+  }
+
+  .burger-button{
+    display: none;
+    width: 55px;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: @radius;
+    span{
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+      height: 3px;
+      background: #fff;
+      margin: 5px;
+    }
+  }
+}
+
+
+main{
+  display: flex;
+  flex-direction: row;
+  .sidebar{
+    flex: 0 0 15%;
+    padding: 20px;
+    .accordion{
+      li {
+        list-style: none;
+        position: relative;
+        .toggle{
+          background: @sidebar-item;
+          border-radius: @radius;
+          color: @white;
+          cursor: pointer;
+          font-weight: 300;
+          margin: 0 0 0.5em 0;
+          padding: 0.25em 0.5em;
+          -webkit-transition: background 0.5s;
+          transition: background 0.5s;
+          position: relative;
+          &.arrow::after{
+            content: '';
+            position: absolute; /* Абсолютное позиционирование */
+            right: 0; top: 5px; /* Положение треугольника */
+            border: 10px solid transparent;	border-left: 10px solid @white;
+          }
+          .arrow-open{
+            content: '';
+            position: absolute; /* Абсолютное позиционирование */
+            right: 0; top: 5px; /* Положение треугольника */
+            border: 10px solid transparent;	border-top: 10px solid @white;
+          }
+        }
+        .inner {
+          height: 0;
+          overflow: hidden;
+          .testing{
+            height: auto;
+            opacity: 0;
+            position: absolute;
+            z-index: -1;
+          }
+          .visible{height: auto;}
+        }
+        .inner .toggle{
+          background: fadeout(@sidebar-item, 15%);
+        }
+      }
+    }
+  }
+
+  .main-content{
+    flex: 1;
+    padding: 20px;
+
+    .search-wrap {
+
+      div{
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+      }
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px;
+      border-radius: @radius;
+      background: #c0c0c0;
+
+      .search-input{
+        input{
+          width: 100%;
+        }
+      }
+      .search-button__wrapper{
+        background: none;
+        border: none;
+        text-indent: 150%;
+        white-space: nowrap;
+        overflow: hidden;
+        cursor: pointer;
+        width: 30px;
+        -webkit-mask: url(../../www/img/magnifying-glass29.svg) no-repeat 50% 50%;
+        mask: url(../../www/img/magnifying-glass29.svg) no-repeat 50% 50%;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+      }
+      .icon-white { background: white; }
+    }
+
+    #product-list{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .content-item{
+        flex: 0 0 25%;
+        max-width: 295px;
+        border: 2px solid @content-inner-border;
+        border-radius: @radius;
+        padding: 12px;
+        float: left;
+        margin: 20px 0;
+        list-style-type: none;
+
+          h2{
+            color: @title;
+            font-size: @title-font-size;
+            text-align: center;
+          }
+          .product-img{
+            width: 100%;
+            height: 150px;
+            background: @buy-button;
+            margin: 12px 0;
+
+          }
+          .buy{
+            float: right;
+            text-transform: uppercase;
+            color: @white;
+            background: @buy-button;
+            border: none;
+            padding: 5px 10px;
+            border-radius: @radius;
+          }
+          .product-description{
+            text-align: justify;
+            font-size: @descr-font-size;
+            padding: 0 20px;
+          }
+
+      }
+    }
+  }
+}
+
+
+
+
+//media queries
+
+@media screen and (max-width: 320px) {
+  main{
+    .main-content{
+      #product-list{
+        flex-direction: column;
+        .content-item{
+          flex: 1;
+        }
+
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 480px) {
+  header{
+    .header-contacts{
+      display: none;
+    }
+    .phone-icon-sm{
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 650px){
+  main{
+    .main-content{
+       #product-list{
+         .content-item{
+           flex: 0 0 38%;
+         }
+       }
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 768px){
+  header{
+    justify-content: flex-end;
+    .burger-button{
+      display: block;
+    }
+  }
+  main{
+    flex-direction: column;
+
+    .sidebar{
+      display: none;
+      padding-bottom: 0;
+    }
+
+
+  }
+}
+

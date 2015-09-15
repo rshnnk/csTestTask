@@ -1,0 +1,47 @@
+{
+  "product0": {
+    "productName": "Asus PU301LA",
+    "productType": "Ноутбук",
+    "productId": "id7531"
+  },
+  "product1": {
+    "productName": "Dell Inspiron 5749",
+    "productType": "Ноутбук",
+    "productId": "id7532"
+  },
+  "product2": {
+    "productName": "MSI PCI-Ex GeForce GTX 960",
+    "productType": "Видеокарта",
+    "productId": "id7533"
+  },
+  "product3": {
+    "productName": "Dell UltraSharp U2412M",
+    "productType": "Монитор",
+    "productId": "id7534"
+  },
+  "product4": {
+    "productName": "A4Tech Bloody V8MA",
+    "productType": "Мышь",
+    "productId": "id7535"
+  },
+  "product5": {
+    "productName": "BOSCH MSM 6B700",
+    "productType": "Блендер",
+    "productId": "id7536"
+  },
+  "product6": {
+    "productName": "HP 255 G3",
+    "productType": "Ноутбук",
+    "productId": "id7537"
+  },
+  "product7": {
+    "productName": "Lenovo G40-30",
+    "productType": "Ноутбук",
+    "productId": "id7538"
+  },
+  "product8": {
+    "productName": "Apple MacBook Air 13",
+    "productType": "Ноутбук",
+    "productId": "id7539"
+  }
+}
